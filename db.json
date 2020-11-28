@@ -5,56 +5,66 @@
       "title": "Маргарита",
       "description": "Моцарелла, Соус Domino's",
       "price": [100,135,160],
-      "features": ["vegetarian"],
-      "stock": 5
+      "features": ["vegetarian"]
     },
     {
       "id": 2,
       "title": "Пепперони с томатом",
       "description": "Моцарелла, Пепперони, Помидоры, Соус Барбекю",
       "price": [100,135,160],
-      "features": ["sausage"],
-      "stock": 5
+      "features": ["sausage"]
     },
     {
       "id": 3,
       "title": "Техас",
       "description": "Кукуруза, Лук, Грибы, Колбаски баварские, Моцарелла, Соус Барбекю",
       "features": ["sausage","mushrooms"],
-      "price": [100,135,160],
-      "stock": 5
+      "price": [100,135,160]
     },
     {
       "id": 4,
       "title": "Пепперони Блюз",
       "description": "Бергадер Блю, Моцарелла, Пепперони, Соус Альфредо",
       "features": ["sausage"],
-      "price": 100,
-      "stock": 5
+      "price": [120,160,200]
     },
     {
       "id": 5,
       "title": "Тонни Пепперони",
       "description": "Моцарелла, Пепперони, Соус Domino's",
       "features": ["sausage"],
-      "price": 100,
-      "stock": 5
+      "price": [120,150,180]
     },
     {
       "id": 6,
       "title": "Гавайская",
       "description": "Курица, Ананас, Моцарелла, Соус Domino's",
       "features": ["meat","pineapple"],
-      "price": 100,
-      "stock": 5
+      "price": [110,130,150]
     },
     {
       "id": 7,
       "title": "Барбекю",
       "description": "Курица, Лук, Бекон, Грибы, Моцарелла, Соус Барбекю",
       "features": ["meat"],
-      "price": 100,
-      "stock": 5
+      "price": [120,150,180]
+    }
+  ],
+  "actions": [
+    {
+      "id": 1,
+      "pizza_id": 1,
+      "action": 5
+    },
+    {
+      "id": 2,
+      "pizza_id": 3,
+      "action": 10
+    },
+    {
+      "id": 3,
+      "pizza_id": 5,
+      "action": 15
     }
   ]
 }

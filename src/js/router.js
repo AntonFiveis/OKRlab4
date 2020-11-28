@@ -10,12 +10,13 @@ export default class Router{
         this.client = new Client()
     }
     route(path, data={}){
+
         switch (path) {
             case 'catalog':
                 console.log(data)
                 this.root.innerHTML =test
                 break
-            case 'basket':
+            case 'cart':
                 this.root.innerHTML  = ''
                 break
             case 'loading':
@@ -25,9 +26,10 @@ export default class Router{
                 this.root.innerHTML = '<div>MAIN PAGE</div>'
                 console.log("MAIN")
                 break;
+
             default:
-                this.root.innerHTML = error
                 window.history.replaceState(null,null,'#')
+                this.render()
                 break;
 
         }
@@ -39,7 +41,7 @@ export default class Router{
         this.route('loading')
         this.client.getData(path).then((data)=>{
             console.log(data)
-            this.route(path,data)
+            this.route(path.split('/')[0],data)
         }).catch(()=>{
             this.route('error')
         })
