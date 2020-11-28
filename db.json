@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Маргарита",
-      "img": "https://media.dominos.ua/menu/product_osg_image_category/2019/10/04/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D1%80%D0%B8%D1%82%D0%B0_300dpi-min.jpg"
+      "img": "https://media.dominos.ua/menu/product_osg_image_category/2019/10/04/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D1%80%D0%B8%D1%82%D0%B0_300dpi-min.jpg",
       "description": "Моцарелла, Соус Domino's",
       "price": [100,135,160],
       "features": ["vegetarian"]

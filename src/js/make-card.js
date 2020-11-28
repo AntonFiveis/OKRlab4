@@ -1,7 +1,7 @@
 export function makeCard(pizza) {
     return `
-    <div class="container-fluid m-2" style="background-color: #eee">
-        <div class="container p-2">
+    <div class="container-fluid mt-2" style="background-color: #eee">
+        <div class="container">
             <div class="card">
                 <img src="${pizza.img}" alt="" class="card-img-top">
                 <div class="card-body">
