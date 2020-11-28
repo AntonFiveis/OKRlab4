@@ -1,7 +1,7 @@
-import test from '../html/test.html'
+
 import loader from '../html/loader.html'
 import Client from "./test.server";
-import error from '../html/error.html'
+import main_page from "./main-page";
 // import {parseQuery} from "./helpers";
 
 export default class Router{
@@ -14,16 +14,19 @@ export default class Router{
         switch (path) {
             case 'catalog':
                 console.log(data)
-                this.root.innerHTML =test
+                this.root.innerHTML =JSON.stringify( data)
                 break
             case 'cart':
-                this.root.innerHTML  = ''
+                this.root.innerHTML  = JSON.stringify( data)
                 break
             case 'loading':
-                this.root.innerHTML = loader
+                this.root.innerHTML =loader
+                break;
+            case 'actions':
+                this.root.innerHTML = JSON.stringify( data)
                 break;
             case '':
-                this.root.innerHTML = '<div>MAIN PAGE</div>'
+                this.root.innerHTML = main_page(data)
                 console.log("MAIN")
                 break;
 
@@ -36,13 +39,13 @@ export default class Router{
     }
     render(){
         const path = window.location.hash.split('#')[1]||''
-        console.log(path)
         // console.log(parseQuery(path))
         this.route('loading')
         this.client.getData(path).then((data)=>{
-            console.log(data)
-            this.route(path.split('/')[0],data)
+
+            this.route(path.split('/')[0]||'',data)
         }).catch(()=>{
+            console.log("error")
             this.route('error')
         })
     }

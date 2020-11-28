@@ -1,4 +1,11 @@
-
+#mainCarousel{
+    margin:auto;
+    border: orangered 10px solid;
+    border-radius: 10px;
+}
+.carousel-container{
+    width: 800px;
+}
 .loader-container{
     height: 300px;
 }
