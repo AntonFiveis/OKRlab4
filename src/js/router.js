@@ -12,6 +12,7 @@ export default class Router{
     route(path, data={}){
         switch (path) {
             case 'catalog':
+                console.log(data)
                 this.root.innerHTML =test
                 break
             case 'basket':
