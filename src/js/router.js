@@ -1,8 +1,7 @@
-
+import actions_page from "./actions_page";
 import loader from '../html/loader.html'
 import Client from "./test.server";
 import main_page from "./main-page";
-// import {parseQuery} from "./helpers";
 
 export default class Router{
     constructor(rootID){
@@ -23,7 +22,7 @@ export default class Router{
                 this.root.innerHTML =loader
                 break;
             case 'actions':
-                this.root.innerHTML = JSON.stringify( data)
+                this.root.innerHTML = actions_page(data)
                 break;
             case '':
                 this.root.innerHTML = main_page(data)

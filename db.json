@@ -57,6 +57,7 @@
       "price": [120,150,180]
     }
   ],
+  "recommended": [1,3,5],
   "actions": [
     {
       "id": 1,

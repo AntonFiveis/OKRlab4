@@ -19,10 +19,9 @@ export default class Client {
             console.log(actions)
             let data =[]
             for(let i=0;i<actions.length;i++){
-                console.log(this._urlBase +'catalog/'+actions[i].pizza_id)
                 let action_pizza = await fetch(this._urlBase +'catalog/'+actions[i].pizza_id).then(data => data.json())
-                console.log(action_pizza)
-                data.push(action_pizza)
+
+                data.push({action_pizza, action:actions[i].action})
             }
             return data
         }
