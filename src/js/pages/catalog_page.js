@@ -1,4 +1,4 @@
-import {makeCard,makeRow} from "./makeCard";
+import {makeCard,makeRow} from "../makeCard";
 
 export default function catalog_page(data){
     let pizzas = []

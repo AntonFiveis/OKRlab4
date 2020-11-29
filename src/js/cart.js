@@ -4,7 +4,21 @@ export default class Cart{
         this.client = client?client: new Client()
     }
 
-    async addToCart(size,id){
+    deleteFromCart(size, id){
+        let cart = this.getCart()
+        const idx = cart.findIndex((el)=>el.id==id&&el.size==size)
+        if(idx!=-1){
+            // console.log(cart[idx])
+            cart[idx].count-=1
+            if(cart[idx].count<1)
+                cart.splice(idx,1)
+        }
+        localStorage.setItem('cart',JSON.stringify(cart))
+    }
+    clearCart(){
+        localStorage.setItem('cart',[])
+    }
+    addToCart(size,id){
         let cart = this.getCart()
 
         const idx = cart.findIndex((el)=>el.id==id&&el.size==size)
@@ -15,29 +29,24 @@ export default class Cart{
             cart.push({id,size,count:1})
 
         }
-        await this.calcTotal()
         localStorage.setItem('cart',JSON.stringify(cart))
     }
     async calcTotal(){
         let catalog = await this.client.getData('catalog')
-        // console.log(catalog)
+
         const cart = this.getCart()
-        this.total = 0
+        let total = 0
         cart.forEach((el)=>{
-            this.total+=catalog[el.id].price[el.size]*el.count
+            // console.log(catalog[el.id-1])
+            total+=(catalog[el.id-1].price[el.size]*el.count)
         })
-        return this.total
-    }
-    getTotal()
-    {
-        return this.total
+        return total
     }
     getCart(){
-        if (localStorage.getItem('cart') == null) {
+        if (!localStorage.getItem('cart')) {
             localStorage.setItem('cart', JSON.stringify([]));
 
             return []
-            this.total = 0
         } else {
             return JSON.parse(localStorage.getItem('cart'));
         }

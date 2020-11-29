@@ -2,7 +2,9 @@ export default class Client {
     constructor() {
         this._urlBase = 'http://my-json-server.typicode.com/antonfiveis/OKRlab4/'
     }
-
+    async post(body){
+        await fetch(this._urlBase+'orders',{method:'POST', body})
+    }
     async getData(url) {
         let urlparts=url.split('/')
         if(urlparts[0]==='')

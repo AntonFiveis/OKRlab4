@@ -1,5 +1,5 @@
-import carousel from '../html/carousel.html'
-import {makeCard,makeRow} from './makeCard'
+import carousel from '../../html/carousel.html'
+import {makeCard,makeRow} from '../makeCard'
 export default function main_page(data) {
     const greeting = '<div class="container"> <h1>Добро пожаловать на сайт Domino\'s Pizza</h1></div>'
     const title4pizzas='<div class="container m-5 "><h1>Пиццы месяца</h1></div>'

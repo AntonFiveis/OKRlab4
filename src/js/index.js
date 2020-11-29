@@ -6,7 +6,7 @@ const router = new Router('root')
 const cart = new Cart()
 const links = document.querySelectorAll('.nav-item')
 const brand = document.querySelector('.navbar-brand')
-const total = document.querySelector('#total')
+const total = document.querySelector('#cart_total')
 window.addEventListener('load',()=>{
    router.render()
    cart.calcTotal().then((tot)=>total.innerHTML=tot)
@@ -16,7 +16,7 @@ brand.addEventListener('click',(ev)=>{
    window.history.replaceState(null,null,'#')
    router.render()
 })
-root.addEventListener('change',()=>total.innerHTML = cart.getTotal())
+// root.addEventListener('change',()=>total.innerHTML = cart.calcTotal())
 links.forEach(nav_item=>nav_item.addEventListener('click',(ev)=>{
    ev.preventDefault()
    window.history.replaceState(null,null,'#'+ev.target.id.split('_')[0])
