@@ -21,7 +21,12 @@
 #root {
     min-height: 86.5vh;
 }
-
+#cart_link{
+    border:black 1px solid;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+}
 .actions-title {
     color: #FFBA00;
 }

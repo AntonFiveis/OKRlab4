@@ -9,7 +9,7 @@ export default function main_page(data) {
         recommended.push(makeCard(data.catalog[pizza_id]))
     })
     const titleActions ='<div class="container m-3"><h1>Горячие акции!</h1></div>'
-    const actions = [makeCard(data.catalog[data.actions[0].pizza_id]), makeCard(data.catalog[data.actions[1].pizza_id])]
+    const actions = [makeCard(data.catalog[data.actions[0].pizza_id],data.actions[0].action), makeCard(data.catalog[data.actions[1].pizza_id],data.actions[1].action)]
     return greeting +carousel+ title4pizzas +makeRow(recommended) +titleActions+makeRow(actions)
 }
 

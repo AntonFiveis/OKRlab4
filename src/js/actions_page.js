@@ -5,6 +5,7 @@ export default function actions_page(data) {
     data.forEach((pizza)=>{
         pizzas.push(makeCard(pizza.action_pizza,pizza.action))
     })
+    console.log(pizzas)
     return title+makeRow(pizzas)
 
 }
